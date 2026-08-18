@@ -14,6 +14,10 @@ const translations = {
     "projects.label":"04 / 科研项目","projects.title":"科研项目","projects.placeholder":"项目详情即将更新","publications.label":"05 / 论文成果","publications.title":"论文成果","publications.paper":"A Singularity-Free Vector-Field-Based Framework for Safe Distributed Motion Coordination of Multi-Robot Systems","publications.meta":"IEEE Transactions on Robotics (T-RO) · JCR Q1 · 中科院一区 · IF 10.0","publications.fixed":"固定翼无人机系统","publications.diffusion":"基于扩散模型的机器人规划","publications.nonlinear":"非线性系统","publications.placeholder":"论文详情即将更新","publications.view":"查看论文 ↗","contact.label":"06 / 联系方式","contact.title":"保持联系","contact.text":"lizheng2024@hnu.edu.cn","contact.button":"lizheng2024@hnu.edu.cn","footer.text":"学术个人主页"
   }
 };
+translations.en["publications.label"] = "04 / PUBLICATIONS";
+translations.zh["publications.label"] = "04 / 论文成果";
+translations.en["publications.meta"] = "IEEE Transactions on Robotics (T-RO) · JCR Q1 · CAS Q1 · IF 11.1";
+translations.zh["publications.meta"] = "IEEE Transactions on Robotics (T-RO) · 中科院一区 · IF 11.1";
 
 let currentLanguage = "en";
 const languageButton = document.querySelector('.language-button');
