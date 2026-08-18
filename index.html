@@ -7,6 +7,14 @@
   <title>李政 | Academic Homepage</title>
   <link rel="stylesheet" href="style.css">
   <style>.hero-image{position:absolute;width:100%;height:100%;inset:0;object-fit:cover;object-position:center center}.image-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,43,58,.05),rgba(20,43,58,.42))}.visual-grid{background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);z-index:1}.visual-caption{z-index:2;color:white}</style>
+  <style>
+    .biography-section{padding:110px 0;background:#fff;border-top:1px solid var(--line)}
+    .biography-grid{display:grid;grid-template-columns:260px 1fr;gap:72px;align-items:start}
+    .portrait-frame{aspect-ratio:3/4;background:#eef4f1;overflow:hidden;border:1px solid var(--line)}
+    .portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center top}
+    .biography-copy{max-width:760px}.biography-copy h2{font:400 46px Georgia,serif;margin:0 0 24px}.biography-copy p{color:var(--muted);font-size:15px;line-height:1.9;margin:0 0 18px}.orcid-link{display:inline-flex;gap:12px;align-items:center;margin-top:16px;color:var(--blue);font-size:13px;font-weight:700;text-decoration:none}.orcid-link span{font-weight:400;color:var(--muted)}
+    @media(max-width:720px){.biography-section{padding:76px 0}.biography-grid{grid-template-columns:150px 1fr;gap:24px}.biography-copy h2{font-size:34px}.biography-copy p{font-size:14px}.orcid-link{display:flex;flex-wrap:wrap}}
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -44,6 +52,18 @@
     <section class="section muted" id="projects"><div class="container"><div class="section-heading"><div><p class="section-label">04 / PROJECTS</p><h2>科研项目</h2></div><span class="status">CONTENT TO BE ADDED</span></div><div class="empty-grid"><div>PROJECT 01<span>项目内容占位</span></div><div>PROJECT 02<span>项目内容占位</span></div><div>PROJECT 03<span>项目内容占位</span></div></div></div></section>
     <section class="section container" id="publications"><div class="section-heading"><div><p class="section-label">05 / PUBLICATIONS</p><h2>论文成果</h2></div><span class="status">CONTENT TO BE ADDED</span></div><div class="empty-line"><span>2025</span><strong>论文标题占位</strong><em>期刊 / 会议名称</em></div><div class="empty-line"><span>2024</span><strong>论文标题占位</strong><em>期刊 / 会议名称</em></div></section>
     <section class="contact-section" id="contact"><div class="container contact-wrap"><div><p class="section-label">06 / CONTACT</p><h2>保持联系</h2><p>联系方式与学术主页链接暂留空白。</p></div><a class="button light" href="mailto:">发送邮件 <span>↗</span></a></div></section>
+    <section class="biography-section" id="biography">
+      <div class="container biography-grid">
+        <div class="portrait-frame"><img src="portrait.jpg" alt="Portrait of Zheng Li"></div>
+        <div class="biography-copy">
+          <p class="section-label">07 / BIOGRAPHY</p>
+          <h2>About Zheng Li</h2>
+          <p>Zheng Li is currently pursuing the Doctor of Philosophy degree at School of Artificial Intelligence and Robotics, Hunan University, Changsha, China. He received his Bachelor of Engineering degree in Robotics and Intelligence Devices (RIDS) from the Maynooth International Engineering College (MIEC), Fuzhou University, Fuzhou, China, in 2024.</p>
+          <p>His current research interests primarily focus on fixed-wing unmanned aerial vehicle (UAV) systems, guiding vector field-based motion planning, diffusion-based robot path planning, non-harmonic robotic systems, and nonlinear system modeling and control. His research centers on advanced planning and control theories for autonomous robotic systems, aiming to enhance the autonomy, robustness, and adaptability of fixed-wing UAVs in complex dynamic environments.</p>
+          <a class="orcid-link" href="https://orcid.org/0009-0004-5382-1096" target="_blank" rel="noreferrer">ORCID <span>0009-0004-5382-1096</span> ↗</a>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="container footer"><span>© 2026 LI ZHENG</span><span>Academic Homepage</span></footer>
   <script src="script.js"></script>
