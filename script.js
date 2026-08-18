@@ -27,7 +27,16 @@ function addPublicationRows() {
     const row = document.createElement('div');
     row.className = 'publication-feature';
     row.innerHTML = `<span class="pub-year">${label}</span><div><h3 data-i18n="${key}"></h3><p data-i18n="publications.placeholder"></p></div>`;
-    first.insertAdjacentElement('afterend', row);
+    section.appendChild(row);
+  });
+}
+
+function orderResearchRows() {
+  const list = document.querySelector('.research-list');
+  const rows = Array.from(list.querySelectorAll('article'));
+  [rows[1], rows[2], rows[0]].forEach((row, index) => {
+    row.querySelector('.index').textContent = String(index + 1).padStart(2, '0');
+    list.appendChild(row);
   });
 }
 
@@ -48,4 +57,5 @@ menuButton.addEventListener('click', () => {
 });
 nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => nav.classList.remove('open')));
 addPublicationRows();
+orderResearchRows();
 applyLanguage('en');
