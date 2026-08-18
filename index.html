@@ -13,6 +13,7 @@
     .portrait-frame{aspect-ratio:3/4;background:#eef4f1;overflow:hidden;border:1px solid var(--line)}
     .portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center top}
     .biography-copy{max-width:760px}.biography-copy h2{font:400 46px Georgia,serif;margin:0 0 24px}.biography-copy p{color:var(--muted);font-size:15px;line-height:1.9;margin:0 0 18px}.orcid-link{display:inline-flex;gap:12px;align-items:center;margin-top:16px;color:var(--blue);font-size:13px;font-weight:700;text-decoration:none}.orcid-link span{font-weight:400;color:var(--muted)}
+    .language-switch{display:flex;gap:5px;margin-bottom:20px}.language-button{border:1px solid var(--line);background:transparent;color:var(--muted);padding:6px 12px;font:inherit;font-size:12px;cursor:pointer}.language-button.active{background:var(--ink);border-color:var(--ink);color:#fff}.bio-panel{display:none}.bio-panel.active{display:block}.bio-panel h2{margin-bottom:24px}.biography-copy .orcid-link{margin-top:16px}
     @media(max-width:720px){.biography-section{padding:76px 0}.biography-grid{grid-template-columns:150px 1fr;gap:24px}.biography-copy h2{font-size:34px}.biography-copy p{font-size:14px}.orcid-link{display:flex;flex-wrap:wrap}}
   </style>
   <style>
@@ -36,6 +37,17 @@
   </header>
 
   <main id="top">
+    <section class="biography-section" id="biography">
+      <div class="container biography-grid">
+        <div class="portrait-frame"><img src="portrait.jpg" alt="Portrait of Zheng Li"></div>
+        <div class="biography-copy">
+          <div class="language-switch" role="tablist" aria-label="Biography language"><button class="language-button active" data-language="zh" role="tab" aria-selected="true">中文</button><button class="language-button" data-language="en" role="tab" aria-selected="false">EN</button></div>
+          <div class="bio-panel active" data-panel="zh" role="tabpanel"><p class="section-label">02 / 关于我</p><h2>李政</h2><p>李政现就读于湖南大学人工智能与机器人学院，攻读博士学位。2024年，他毕业于福州大学梅努斯国际工程学院机器人与智能器件专业，获工学学士学位。</p><p>目前主要研究固定翼无人机系统、基于引导矢量场的运动规划、基于扩散模型的机器人路径规划、非谐机器人系统，以及非线性系统建模与控制。研究聚焦于自主机器人系统的先进规划与控制理论，旨在提升固定翼无人机在复杂动态环境中的自主性、鲁棒性与适应性。</p></div>
+          <div class="bio-panel" data-panel="en" role="tabpanel"><p class="section-label">02 / BIOGRAPHY</p><h2>About Zheng Li</h2><p>Zheng Li is currently pursuing the Doctor of Philosophy degree at School of Artificial Intelligence and Robotics, Hunan University, Changsha, China. He received his Bachelor of Engineering degree in Robotics and Intelligence Devices (RIDS) from the Maynooth International Engineering College (MIEC), Fuzhou University, Fuzhou, China, in 2024.</p><p>His current research interests primarily focus on fixed-wing unmanned aerial vehicle (UAV) systems, guiding vector field-based motion planning, diffusion-based robot path planning, non-harmonic robotic systems, and nonlinear system modeling and control. His research centers on advanced planning and control theories for autonomous robotic systems, aiming to enhance the autonomy, robustness, and adaptability of fixed-wing UAVs in complex dynamic environments.</p></div>
+          <a class="orcid-link" href="https://orcid.org/0009-0004-5382-1096" target="_blank" rel="noreferrer">ORCID <span>0009-0004-5382-1096</span> ↗</a>
+        </div>
+      </div>
+    </section>
     <section class="hero container">
       <div class="hero-copy">
         <p class="eyebrow">ACADEMIC HOMEPAGE / 01</p>
@@ -66,18 +78,6 @@
       <a href="https://ieeexplore.ieee.org/abstract/document/11652974" target="_blank" rel="noreferrer">View paper ↗</a>
     </section>
 
-    <section class="biography-section" id="biography">
-      <div class="container biography-grid">
-        <div class="portrait-frame"><img src="portrait.jpg" alt="Portrait of Zheng Li"></div>
-        <div class="biography-copy">
-          <p class="section-label">07 / BIOGRAPHY</p>
-          <h2>About Zheng Li</h2>
-          <p>Zheng Li is currently pursuing the Doctor of Philosophy degree at School of Artificial Intelligence and Robotics, Hunan University, Changsha, China. He received his Bachelor of Engineering degree in Robotics and Intelligence Devices (RIDS) from the Maynooth International Engineering College (MIEC), Fuzhou University, Fuzhou, China, in 2024.</p>
-          <p>His current research interests primarily focus on fixed-wing unmanned aerial vehicle (UAV) systems, guiding vector field-based motion planning, diffusion-based robot path planning, non-harmonic robotic systems, and nonlinear system modeling and control. His research centers on advanced planning and control theories for autonomous robotic systems, aiming to enhance the autonomy, robustness, and adaptability of fixed-wing UAVs in complex dynamic environments.</p>
-          <a class="orcid-link" href="https://orcid.org/0009-0004-5382-1096" target="_blank" rel="noreferrer">ORCID <span>0009-0004-5382-1096</span> ↗</a>
-        </div>
-      </div>
-    </section>
   </main>
   <footer class="container footer"><span>© 2026 LI ZHENG</span><span>Academic Homepage</span></footer>
   <script src="script.js"></script>
