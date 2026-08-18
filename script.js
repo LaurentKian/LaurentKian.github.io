@@ -16,7 +16,7 @@ const translations = {
 };
 translations.en["publications.label"] = "04 / PUBLICATIONS";
 translations.zh["publications.label"] = "04 / 论文成果";
-translations.en["publications.meta"] = "IEEE Transactions on Robotics (T-RO) · JCR Q1 · CAS Q1 · IF 11.1";
+translations.en["publications.meta"] = "IEEE Transactions on Robotics (T-RO) · JCR Q1 · CAS Q2 · IF 11.1";
 translations.zh["publications.meta"] = "IEEE Transactions on Robotics (T-RO) · 中科院一区 · IF 11.1";
 
 let currentLanguage = "en";
