@@ -18,6 +18,10 @@ translations.en["publications.label"] = "04 / PUBLICATIONS";
 translations.zh["publications.label"] = "04 / 论文成果";
 translations.en["publications.meta"] = "IEEE Transactions on Robotics (T-RO) · JCR Q1 · CAS Q2 · IF 11.1";
 translations.zh["publications.meta"] = "IEEE Transactions on Robotics (T-RO) · 中科院一区 · IF 11.1";
+translations.en["stats.views"] = "Page views";
+translations.en["stats.visitors"] = "Visitors";
+translations.zh["stats.views"] = "页面访问量";
+translations.zh["stats.visitors"] = "访客人数";
 
 let currentLanguage = "en";
 const languageButton = document.querySelector('.language-button');
@@ -44,6 +48,18 @@ function orderResearchRows() {
   });
 }
 
+function addVisitorStats() {
+  const footer = document.querySelector('.footer');
+  const stats = document.createElement('div');
+  stats.className = 'visitor-stats';
+  stats.innerHTML = '<span><span data-i18n="stats.views">Page views</span>: <span id="busuanzi_value_page_pv">--</span></span><span><span data-i18n="stats.visitors">Visitors</span>: <span id="busuanzi_value_site_uv">--</span></span>';
+  footer.appendChild(stats);
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+  document.body.appendChild(script);
+}
+
 function applyLanguage(language) {
   currentLanguage = language;
   document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
@@ -63,6 +79,7 @@ menuButton.addEventListener('click', () => {
 });
 nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => nav.classList.remove('open')));
 orderResearchRows();
+addVisitorStats();
 applyLanguage('en');
 const emailButton = document.querySelector('#contact .button');
 emailButton.href = 'mailto:lizheng2024@hnu.edu.cn';
