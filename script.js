@@ -4,6 +4,7 @@ zh["profile.school"]="人工智能与机器人学院";
 zh["profile.location"]="中国 · 长沙";
 zh["profile.focus"]="研究重点";
 zh["profile.topics"]="空中机器人<br>运动规划<br>非线性控制";
+Object.assign(zh,{"copy.home": "主页", "copy.projects": "项目", "copy.role": "博士生", "copy.university": "湖南大学", "copy.bio": "你好！我是<strong>李政（Zheng Li）</strong>，目前在<strong>湖南大学人工智能与机器人学院</strong>攻读博士学位。2024 年毕业于福州大学梅努斯国际工程学院机器人与智能器件专业，获工学学士学位。", "copy.paperintro": "我的研究包括基于矢量场的多机器人运动协调。下方展示代表论文及其补充演示视频。", "copy.interests": "研究方向", "copy.direction": "研究方向", "copy.gvf": "引导矢量场", "copy.gvfdesc": "基于引导矢量场的制导，以及多机器人系统的安全分布式运动协调。", "copy.diffusion": "基于扩散模型的机器人规划", "copy.diffusiondesc": "复杂环境中的学习型路径规划与智能导航。", "copy.nonlinear": "非线性系统", "copy.nonlineardesc": "复杂动态系统的建模、稳定性分析与控制。", "copy.vision": "研究自主机器人系统的规划与控制方法，关注复杂环境中的可靠运动。", "copy.video": "视频 ↓", "copy.watch": "观看演示 →", "copy.coordination": "基于矢量场的运动协调", "copy.supplement": "科研项目 · 补充视频", "copy.uav": "固定翼无人机系统", "copy.ongoing": "研究方向"});
 const elements = [...document.querySelectorAll('[data-t]')];
 const en = Object.fromEntries(elements.map(el => [el.dataset.t, el.innerHTML]));
 let language = 'en';
