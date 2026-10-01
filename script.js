@@ -1,85 +1,15 @@
-const translations = {
-  en: {
-    "nav.home":"Homepage","nav.about":"About Me","nav.research":"Research","nav.projects":"Projects","nav.publications":"Publications","nav.contact":"Contact",
-    "home.eyebrow":"ACADEMIC HOMEPAGE / 01","home.name":"Zheng Li","home.role":"PhD Student","home.lead":"Researching autonomous robotic systems, nonlinear control, and intelligent motion planning for fixed-wing UAVs.","home.button":"About Me <span>↘</span>","home.contact":"Contact <span>→</span>",
-    "about.label":"02 / ABOUT ME","about.title":"About Me","about.p1":"Zheng Li is currently pursuing the Doctor of Philosophy degree at School of Artificial Intelligence and Robotics, Hunan University, Changsha, China. He received his Bachelor of Engineering degree in Robotics and Intelligence Devices (RIDS) from the Maynooth International Engineering College (MIEC), Fuzhou University, Fuzhou, China, in 2024.","about.p2":"His current research interests primarily focus on fixed-wing unmanned aerial vehicle (UAV) systems, guiding vector field-based motion planning, diffusion-based robot path planning, non-harmonic robotic systems, and nonlinear system modeling and control. His research centers on advanced planning and control theories for autonomous robotic systems, aiming to enhance the autonomy, robustness, and adaptability of fixed-wing UAVs in complex dynamic environments.",
-    "research.label":"03 / RESEARCH","research.title":"Research Interests","research.note":"From mathematical modeling to embodied intelligence, I study autonomous systems that are explainable, robust, and deployable.","research.r1.title":"Fixed-wing UAV Systems","research.r1.text":"Motion planning, guidance, and control for autonomous fixed-wing aerial vehicles.","research.r2.title":"Diffusion-based Robot Planning","research.r2.text":"Learning-based path planning and intelligent navigation in complex environments.","research.r3.title":"Nonlinear Systems","research.r3.text":"Modeling, stability analysis, and control of complex dynamic systems.",
-    "projects.label":"04 / PROJECTS","projects.title":"Research Projects","projects.placeholder":"Project details coming soon","publications.label":"05 / PUBLICATIONS","publications.title":"Publications","publications.paper":"A Singularity-Free Vector-Field-Based Framework for Safe Distributed Motion Coordination of Multi-Robot Systems","publications.meta":"IEEE Transactions on Robotics (T-RO) · JCR Q1 · CAS Q1 · IF 10.0","publications.fixed":"Fixed-wing UAV Systems","publications.diffusion":"Diffusion-based Robot Planning","publications.nonlinear":"Nonlinear Systems","publications.placeholder":"Publication details coming soon","publications.view":"View paper ↗","contact.label":"06 / CONTACT","contact.title":"Let's Connect","contact.text":"lizheng2024@hnu.edu.cn","contact.button":"lizheng2024@hnu.edu.cn","footer.text":"Academic Homepage"
-  },
-  zh: {
-    "nav.home":"主页","nav.about":"关于我","nav.research":"研究方向","nav.projects":"科研项目","nav.publications":"论文成果","nav.contact":"联系方式",
-    "home.eyebrow":"学术个人主页 / 01","home.name":"李政","home.role":"博士生","home.lead":"专注于自主机器人系统、非线性控制，以及面向固定翼无人机的智能运动规划。","home.button":"关于我 <span>↘</span>","home.contact":"联系我 <span>→</span>",
-    "about.label":"02 / 关于我","about.title":"关于我","about.p1":"李政现就读于湖南大学人工智能与机器人学院，攻读博士学位。2024年，他毕业于福州大学梅努斯国际工程学院机器人与智能器件专业，获工学学士学位。","about.p2":"目前主要研究固定翼无人机系统、基于引导矢量场的运动规划、基于扩散模型的机器人路径规划、非谐机器人系统，以及非线性系统建模与控制。研究聚焦于自主机器人系统的先进规划与控制理论，旨在提升固定翼无人机在复杂动态环境中的自主性、鲁棒性与适应性。",
-    "research.label":"03 / 研究方向","research.title":"研究方向","research.note":"从数学建模到具身智能，关注可解释、稳健且能够实际部署的自主系统。","research.r1.title":"非线性系统","research.r1.text":"复杂动态系统的建模、稳定性分析与控制。","research.r2.title":"固定翼无人机系统","research.r2.text":"面向自主飞行器的运动规划、制导与控制。","research.r3.title":"基于扩散模型的机器人规划","research.r3.text":"复杂环境中的学习型路径规划与智能导航。",
-    "projects.label":"04 / 科研项目","projects.title":"科研项目","projects.placeholder":"项目详情即将更新","publications.label":"05 / 论文成果","publications.title":"论文成果","publications.paper":"A Singularity-Free Vector-Field-Based Framework for Safe Distributed Motion Coordination of Multi-Robot Systems","publications.meta":"IEEE Transactions on Robotics (T-RO) · JCR Q1 · 中科院一区 · IF 10.0","publications.fixed":"固定翼无人机系统","publications.diffusion":"基于扩散模型的机器人规划","publications.nonlinear":"非线性系统","publications.placeholder":"论文详情即将更新","publications.view":"查看论文 ↗","contact.label":"06 / 联系方式","contact.title":"保持联系","contact.text":"lizheng2024@hnu.edu.cn","contact.button":"lizheng2024@hnu.edu.cn","footer.text":"学术个人主页"
-  }
-};
-translations.en["publications.label"] = "04 / PUBLICATIONS";
-translations.zh["publications.label"] = "04 / 论文成果";
-translations.en["publications.meta"] = "IEEE Transactions on Robotics (T-RO) · JCR Q1 · CAS Q2 · IF 11.1";
-translations.zh["publications.meta"] = "IEEE Transactions on Robotics (T-RO) · 中科院一区 · IF 11.1";
-translations.en["stats.views"] = "Page views";
-translations.en["stats.visitors"] = "Visitors";
-translations.zh["stats.views"] = "页面访问量";
-translations.zh["stats.visitors"] = "访客人数";
-
-let currentLanguage = "en";
-const languageButton = document.querySelector('.language-button');
-const menuButton = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.nav-links');
-
-function addPublicationRows() {
-  const section = document.querySelector('#publications');
-  const first = section.querySelector('.publication-feature');
-  [['publications.diffusion','PAPER'],['publications.nonlinear','PAPER']].forEach(([key, label]) => {
-    const row = document.createElement('div');
-    row.className = 'publication-feature';
-    row.innerHTML = `<span class="pub-year">${label}</span><div><h3 data-i18n="${key}"></h3><p data-i18n="publications.placeholder"></p></div>`;
-    section.appendChild(row);
-  });
-}
-
-function orderResearchRows() {
-  const list = document.querySelector('.research-list');
-  const rows = Array.from(list.querySelectorAll('article'));
-  [rows[1], rows[2], rows[0]].forEach((row, index) => {
-    row.querySelector('.index').textContent = String(index + 1).padStart(2, '0');
-    list.appendChild(row);
-  });
-}
-
-function addVisitorStats() {
-  const footer = document.querySelector('.footer');
-  const stats = document.createElement('div');
-  stats.className = 'visitor-stats';
-  stats.innerHTML = '<span><span data-i18n="stats.views">Page views</span>: <span id="busuanzi_value_page_pv">--</span></span><span><span data-i18n="stats.visitors">Visitors</span>: <span id="busuanzi_value_site_uv">--</span></span>';
-  footer.appendChild(stats);
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
-  document.body.appendChild(script);
-}
-
-function applyLanguage(language) {
-  currentLanguage = language;
-  document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
-  document.querySelectorAll('[data-i18n]').forEach((element) => {
-    const value = translations[language][element.dataset.i18n];
-    if (value !== undefined) element.innerHTML = value;
-  });
-  const publicationMeta = document.querySelector('#publications .publication-feature p');
-  if (publicationMeta) publicationMeta.textContent = translations[language]['publications.meta'];
-  languageButton.textContent = language === 'en' ? '中文' : 'EN';
-}
-
-languageButton.addEventListener('click', () => applyLanguage(currentLanguage === 'en' ? 'zh' : 'en'));
-menuButton.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(isOpen));
+const zh = {"nav.work":"代表工作","nav.papers":"论文成果","nav.about":"关于我","nav.contact":"联系","hero.label":"机器人 · 运动规划 · 控制","hero.identity":"博士生 · 湖南大学","hero.title":"走向可靠的自主系统。<br>从理论到运动。","hero.intro":"研究自主机器人系统的运动规划与非线性控制，重点关注固定翼无人机。","hero.work":"查看代表工作 ↗","hero.contact":"联系我 →","media.hero":"研究，在运动中呈现","media.title":"飞行 · 制导 · 协同","media.pending":"研究视频待补充","media.caption":"通过演示了解我的研究","work.label":"01 / 代表工作与研究方向","work.title":"让研究动起来。","work.intro":"围绕运动规划、学习与控制开展研究。这里将逐步补充演示视频和项目详情。","work.video1":"多机器人运动协调演示","work.tag1":"运动协调 / 引导矢量场","work.title1":"安全运动，<br>协同系统。","work.desc1":"关注基于矢量场的制导方法，以及多机器人系统的安全分布式运动协调。","work.related":"相关论文","work.paper":"阅读论文 ↗","work.video2":"固定翼无人机实验演示","work.tag2":"空中机器人 / 制导与控制","work.title2":"面向自主飞行。","work.desc2":"研究自主固定翼无人机系统的运动规划、制导与控制。","work.forthcoming":"项目详情待补充","work.details":"后续将结合演示介绍方法、个人贡献和实验结果。","work.video3":"机器人规划仿真演示","work.tag3":"学习 / 机器人运动规划","work.title3":"学习如何找到路径。","work.desc3":"探索基于扩散模型的机器人路径规划，以及非线性系统建模与控制。","papers.label":"02 / 论文成果","papers.title":"以论文记录研究。","papers.note":"完整作者列表和出版信息待补充。","about.caption":"李政 / 湖南大学","about.label":"03 / 关于我","about.title":"关于我的一些信息。","about.bio":"我目前在湖南大学人工智能与机器人学院攻读博士学位。2024 年毕业于福州大学梅努斯国际工程学院机器人与智能器件专业，获工学学士学位。","about.research":"研究兴趣包括固定翼无人机系统、引导矢量场、基于扩散模型的机器人规划，以及非线性系统建模与控制。","about.cv":"个人简历 · 待补充","contact.label":"04 / 联系方式","contact.title":"一起探讨机器人研究。","contact.desc":"欢迎学术交流、科研合作与职业机会沟通。","footer":"机器人与自主系统","top":"返回顶部 ↑"};
+const elements = [...document.querySelectorAll('[data-t]')];
+const en = Object.fromEntries(elements.map(el => [el.dataset.t, el.innerHTML]));
+let language = 'en';
+const languageButton = document.querySelector('#language');
+languageButton.addEventListener('click', () => {
+ language = language === 'en' ? 'zh' : 'en';
+ document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+ elements.forEach(el => { el.innerHTML = (language === 'zh' ? zh : en)[el.dataset.t]; });
+ languageButton.textContent = language === 'en' ? '中文' : 'EN';
 });
-nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => nav.classList.remove('open')));
-orderResearchRows();
-addVisitorStats();
-applyLanguage('en');
-const emailButton = document.querySelector('#contact .button');
-emailButton.href = 'mailto:lizheng2024@hnu.edu.cn';
+const menu = document.querySelector('#menu');
+const nav = document.querySelector('#navigation');
+menu.addEventListener('click', () => { const open = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', String(open)); });
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); menu.setAttribute('aria-expanded','false'); }));
